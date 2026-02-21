@@ -6,7 +6,7 @@ const config = {
 
   // Hugging Face
   hfApiToken: process.env.HF_API_TOKEN || '',
-  hfModel: process.env.HF_MODEL || 'microsoft/DialoGPT-large',
+  hfModel: process.env.HF_MODEL || 'meta-llama/Llama-3.2-1B-Instruct',
   hfSpaceUrl: process.env.HF_SPACE_URL || '',
 
   // Timeouts

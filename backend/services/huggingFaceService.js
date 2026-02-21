@@ -6,6 +6,10 @@ const config = require('../config');
 async function callInferenceAPI(message) {
     const url = 'https://router.huggingface.co/v1/chat/completions';
 
+    if (!config.hfApiToken) {
+        throw new Error('HF_API_TOKEN is missing. Please add it to your Vercel Environment Variables (Settings > Environment Variables) and redeploy.');
+    }
+
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), config.requestTimeout);
 
@@ -64,6 +68,10 @@ async function callInferenceAPI(message) {
  */
 async function callSpaceAPI(message) {
     const baseUrl = config.hfSpaceUrl.replace(/\/$/, '');
+
+    if (!config.hfApiToken) {
+        throw new Error('HF_API_TOKEN is missing. Please add it to your Vercel Environment Variables (Settings > Environment Variables) and redeploy.');
+    }
 
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), config.requestTimeout);
