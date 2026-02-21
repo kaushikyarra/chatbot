@@ -7,7 +7,7 @@ import requests
 import os
 
 API_URL = "https://router.huggingface.co/v1/chat/completions"
-MODEL = "meta-llama/Llama-3.2-1B-Instruct"
+MODEL = "meta-llama/Llama-3.1-8B-Instruct"
 HF_TOKEN = os.environ.get("HF_TOKEN", "")
 
 def predict(message):
