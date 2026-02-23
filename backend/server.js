@@ -7,7 +7,7 @@ const app = express();
 
 // ─── Middleware ──────────────────────────────────────────────
 app.use(cors({
-    origin: config.frontendUrl,
+    origin: true,
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type'],
 }));
